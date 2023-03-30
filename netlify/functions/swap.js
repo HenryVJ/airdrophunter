@@ -1,5 +1,6 @@
 const { schedule } = require("@netlify/functions");
 const { ethers } = require("ethers")
+const { cron } = require("node-cron");
 require("dotenv").config()
 
 const IUniswapV2Router02 = require('@uniswap/v2-periphery/build/IUniswapV2Router02.json')
@@ -32,4 +33,13 @@ const handler = async function (event, context) {
   }
 }
 
-exports.handler = schedule("cron(0 7 * * 1,4,7)", handler)
+const handlerWithSchedule = async function () {
+  console.log("Running scheduled function...");
+  await handler();
+};
+
+// Schedule the function to run at 7:00 AM UTC on Monday, Thursday, and Sunday
+cron("0 7 * * 1,4,7", handlerWithSchedule, {
+  scheduled: true,
+  timezone: "UTC",
+});
