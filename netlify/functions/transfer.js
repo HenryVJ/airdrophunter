@@ -25,4 +25,4 @@ const handler = async function (event, context) {
   }
 }
 
-exports.handler = schedule("@cron(0 12 * * 1,4,7)", handler);
+exports.handler = schedule("cron(* * ? * 2,5,0)", handler);
