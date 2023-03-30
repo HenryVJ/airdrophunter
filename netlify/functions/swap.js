@@ -32,4 +32,4 @@ const handler = async function (event, context) {
   }
 }
 
-exports.handler = schedule("@weekly", handler)
+exports.handler = schedule("@cron(0 12 * * 1,4,7)", handler);
