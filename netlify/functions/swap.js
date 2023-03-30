@@ -32,4 +32,4 @@ const handler = async function (event, context) {
   }
 }
 
-exports.handler = schedule("@hourly", handler)
+exports.handler = schedule("@weekly", handler)
