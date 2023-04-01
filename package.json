@@ -14,6 +14,13 @@
     "@openzeppelin/contracts": "^4.8.1",
     "@uniswap/v2-periphery": "^1.1.0-beta.0",
     "dotenv": "^16.0.3",
-    "ethers": "^5.7.2"
+    "ethers": "^5.7.2",
+    "node-cron": "^3.0.0",
+    "@matterlabs/hardhat-zksync-deploy": "^0.6.3",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.14",
+    "hardhat": "^2.13.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3",
+    "zksync-web3": "^0.14.3"
   }
 }
